@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>791</width>
+    <height>589</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Rootfinder</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="polysLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Polynomials</string>
+    </property>
+    <property name="buddy">
+     <cstring>polyList</cstring>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="polyList">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>251</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>fdsfsd</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="newPolyBtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>121</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>New polynomial</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="remPolyBtn">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>260</y>
+      <width>121</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Remove</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>251</width>
+      <height>201</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rootsLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>310</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Polynomial roots</string>
+    </property>
+    <property name="buddy">
+     <cstring>listWidget</cstring>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>500</width>
+      <height>500</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>791</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>remPolyBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>removePoly()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>301</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>429</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>newPolyBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>openPolyDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>142</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>polyList</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>polySelected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>168</x>
+     <y>198</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>179</x>
+     <y>33</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>rootSelected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>440</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>272</x>
+     <y>522</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>newPoly()</slot>
+  <slot>removePoly()</slot>
+  <slot>openPolyDialog()</slot>
+  <slot>polySelected()</slot>
+  <slot>rootSelected()</slot>
+ </slots>
+</ui>
